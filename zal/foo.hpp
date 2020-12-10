@@ -18,6 +18,6 @@ std::vector< char > foo(std::list< Human >& people)
             ret_v.emplace_back('y');
         }
     };
-    for_each(people.rbegin(), people.rend(), [&](Human a){a.birthday()});
+    for_each(people.rbegin(), people.rend(), [&](Human a){a.birthday();});
     return ret_v;
 }
