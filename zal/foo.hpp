@@ -10,7 +10,7 @@ std::vector< char > foo(std::list< Human >& people)
 {
     std::vector< char > ret_v(people.size());
     transform(people.begin(), people.end(), ret_v.rbegin(), fun)
-    auto                fun = [&](Human a) {
+    auto                fun = [&](Human& a) {
         if (a.isMonster() == true) {
             ret_v.emplace_back('n');
         }
@@ -18,6 +18,6 @@ std::vector< char > foo(std::list< Human >& people)
             ret_v.emplace_back('y');
         }
     };
-    for_each(people.rbegin(), people.rend(), [&](Human a){a.birthday();});
+    for_each(people.rbegin(), people.rend(), [&](Human& a){a.birthday();});
     return ret_v;
 }
