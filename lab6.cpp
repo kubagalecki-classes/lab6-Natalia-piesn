@@ -5,6 +5,11 @@
 #include <vector>
 using namespace std;
 
+bool greater_than(int a)
+{
+    return a > 7;
+}
+
 int main()
 {
     vector< int > v;
@@ -20,5 +25,5 @@ int main()
         cout << e << " ";
     }
     cout << endl;
-    cout << count(v.begin(), v.end(), 7) << endl;
+    cout << count_if(v.begin(), v.end(), greater_than) << endl;
 }
