@@ -5,14 +5,6 @@
 #include <vector>
 using namespace std;
 
-class greater_than
-{
-public:
-    greater_than(int tres) : threshold(tres) {}
-    bool operator()(int value) const { return value > threshold; }
-    int  threshold;
-};
-
 int main()
 {
     vector< int > v;
@@ -28,5 +20,9 @@ int main()
         cout << e << " ";
     }
     cout << endl;
-    cout << count_if(v.begin(), v.end(), greater_than{7}) << endl;
+    
+    int tres;
+    cin >> tres;
+    auto threshold = [&](double x) { return x > tres; };
+    cout << count_if(v.begin(), v.end(), threshold) << endl;
 }
