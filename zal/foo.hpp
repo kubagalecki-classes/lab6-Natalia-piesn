@@ -16,7 +16,7 @@ std::vector< char > foo(std::list< Human >& people)
         else {
             ret_v.emplace_back('y');
         }
-    };
+    });
     for_each(people.rbegin(), people.rend(), [&](Human& a){a.birthday();});
     return ret_v;
 }
