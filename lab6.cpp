@@ -1,16 +1,34 @@
+#include "make_random_vector.hpp"
 #include <algorithm>
-#include <experimental/random>
 #include <iostream>
-#include <random>
 #include <vector>
 using namespace std;
 
+#include "zal/include/Human.hpp"
+#include <list>
+
+std::vector< char > foo(std::list< Human >& people)
+{
+    std::vector< char > petl;
+    auto                fun = [&petl](Human a) {
+        a.birthday();
+        if (a.isMonster() == true) {
+            petl.push_back('n');
+        }
+        else {
+            petl.push_back('y');
+        }
+    };
+    for_each(people.rbegin(), people.rend(), fun);
+    return {petl};
+}
+
+int main()
+{}
+/*
 int main()
 {
-    vector< int > v;
-    for (int i = 0; i < 7; i++) {
-        v.push_back(std::experimental::randint(0, 10));
-    }
+    vector v = make_random_vector(10, 0, 10);
     for (const int& e : v) {
         cout << e << " ";
     }
@@ -20,9 +38,10 @@ int main()
         cout << e << " ";
     }
     cout << endl;
-    
+
     int tres;
     cin >> tres;
     auto threshold = [&](double x) { return x > tres; };
     cout << count_if(v.begin(), v.end(), threshold) << endl;
 }
+*/
