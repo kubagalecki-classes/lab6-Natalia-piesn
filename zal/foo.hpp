@@ -9,8 +9,7 @@
 std::vector< char > foo(std::list< Human >& people)
 {
     std::vector< char > ret_v(people.size());
-    transform(people.begin(), people.end(), ret_v.rbegin(), fun)
-    auto                fun = [&](Human& a) {
+    transform(people.begin(), people.end(), ret_v.rbegin(), [&](Human& a) {
         if (a.isMonster() == true) {
             ret_v.emplace_back('n');
         }
