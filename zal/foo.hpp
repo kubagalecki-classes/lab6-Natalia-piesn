@@ -9,7 +9,7 @@
 std::vector< char > foo(std::list< Human >& people)
 {
     std::vector< char > ret_v(people.size());
-    auto                fun = [&ret_v](Human a) {
+    auto                fun = [&](Human a) {
         a.birthday();
         if (a.isMonster() == true) {
             ret_v.emplace_back('n');
