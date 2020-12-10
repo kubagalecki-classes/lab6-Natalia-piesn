@@ -15,7 +15,7 @@ int main()
         cout << e << " ";
     }
     cout << endl;
-    sort(v.begin(), v.end());
+    sort(v.begin(), v.end(), greater< int >());
     for (const int& e : v) {
         cout << e << " ";
     }
